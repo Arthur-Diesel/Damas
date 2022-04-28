@@ -13,11 +13,15 @@ public class Piece {
     }
 
     public int getX() {
-        return x;
+        return this.x;
     }
 
     public int getY() {
-        return y;
+        return this.y;
+    }
+
+    public char getColor(){
+        return this.color;
     }
 
     public void setX(int x) { }
