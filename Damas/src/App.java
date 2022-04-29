@@ -17,10 +17,10 @@ public class App {
         Pieces.add(new Pawn(1, 2, 'b'));
         Pieces.add(new Pawn(1, 4, 'b'));
         Pieces.add(new Pawn(1, 6, 'b'));
-        Pieces.add(new Dama(2, 1, 'B'));
-        Pieces.add(new Dama(2, 3, 'B'));
-        Pieces.add(new Dama(2, 5, 'B'));
-        Pieces.add(new Dama(2, 7, 'B'));
+        Pieces.add(new Dama(2, 1, 'b'));
+        Pieces.add(new Dama(2, 3, 'b'));
+        Pieces.add(new Dama(2, 5, 'b'));
+        Pieces.add(new Dama(2, 7, 'b'));
         
         // ~ Pretas ~ 
         Pieces.add(new Pawn(5, 0, 'p'));
@@ -31,10 +31,10 @@ public class App {
         Pieces.add(new Pawn(6, 3, 'p'));
         Pieces.add(new Pawn(6, 5, 'p'));
         Pieces.add(new Pawn(6, 7, 'p'));
-        Pieces.add(new Dama(7, 0, 'P'));
-        Pieces.add(new Dama(7, 2, 'P'));
-        Pieces.add(new Dama(7, 4, 'P'));
-        Pieces.add(new Dama(7, 6, 'P'));
+        Pieces.add(new Dama(7, 0, 'p'));
+        Pieces.add(new Dama(7, 2, 'p'));
+        Pieces.add(new Dama(7, 4, 'p'));
+        Pieces.add(new Dama(7, 6, 'p'));
 
 
         views.ShowBoard(Pieces);

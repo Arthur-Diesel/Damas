@@ -14,16 +14,27 @@ public class Views {
         System.out.println("6 - O jogo acaba quando as pecas do\nadversario acabarem!");
         System.out.println("===================================\n");
     }
-
+    
+    // For Montar Matrix
+    char board[][] = new char [8][8];
+    
+    /*so funciona no eclipse/ DECLARAÇÃO RESET
+    public static final String ANSI_RESET = "\u001B[0m";
+    //DECLARAÇÃO DAS CORES
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";*/
+    
+    
     public void ShowBoard(ArrayList<Piece> Pieces){
-        // For Montar Matrix
-        char board[][] = new char [8][8];
-
-        
-
         for (int x = 0; x<8; x++){
             for(int y=0; y<8; y++){
-                if(board[x][y]!='b'){
+                if(board[x][y]!='b'|| board[x][y] !='p'){
                     board[x][y] = ' ';
                 }
 
@@ -32,7 +43,6 @@ public class Views {
             // board[x][0] = (char) x;
         }
         
-
         for (Piece piece : Pieces) {
             board[piece.getX()][piece.getY()] = piece.getColor();
         }
@@ -41,7 +51,15 @@ public class Views {
             System.out.println("  -------------------------------------------------");
             System.out.print(w+1+" |");
             for(int z = 0; z<8; z++){
-                System.out.print("  "+board[w][z]+"  |");
+            	if(board[w][z] == 'p') {
+            		System.out.print("  "+ board[w][z]+"  |");
+            	} else if(board[w][z]=='b') {
+            		System.out.print("  "+ board[w][z]+"  |");
+            	}else if(board[w][z]=='P' || board[w][z]=='B') {
+            		System.out.print("  " + board[w][z]+"  |");
+            	} else {
+            		System.out.print("  "+board[w][z]+"  |");
+            	}            	
             }
             System.out.print("\n");
         }
