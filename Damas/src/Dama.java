@@ -1,7 +1,8 @@
 public class Dama extends Piece {
     
     Dama(int x, int y, char color){
-        super(x, y, color);
+        super(x, y);
+        this.color = Character.toUpperCase(color);
     }
 
     public boolean isDama(){
@@ -9,7 +10,7 @@ public class Dama extends Piece {
     }
 
     public void setX(int x){
-        
+
     }
 
     public void setY(int y){

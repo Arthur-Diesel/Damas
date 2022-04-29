@@ -1,7 +1,8 @@
 public class Pawn extends Piece {
 
     Pawn(int x, int y, char color){
-        super(x, y, color);
+        super(x, y);
+        this.color = Character.toLowerCase(color);
     }
 
     public boolean isDama(){
