@@ -17,27 +17,35 @@ public class Views {
 
     public void ShowBoard(ArrayList<Piece> Pieces){
         // For Montar Matrix
-        char board[][] = new char [9][9];
+        char board[][] = new char [8][8];
 
-        /*
-        Definir Numerações - ~ |
+        
 
-        for (int x = 0; x != 8; x++){
-            board[0][x] = (char) x;
-            board[x][0] = (char) x;
+        for (int x = 0; x<8; x++){
+            for(int y=0; y<8; y++){
+                if(board[x][y]!='b'){
+                    board[x][y] = ' ';
+                }
+
+            }
+            // board[0][x] = (char) x;
+            // board[x][0] = (char) x;
         }
-        */
+        
 
         for (Piece piece : Pieces) {
             board[piece.getX()][piece.getY()] = piece.getColor();
         }
-
-        for(int w = 0; w != 8; w++){
-            for(int z = 0; z != 8; z++){
-                System.out.print(board[w][z]);
+        System.out.println("     1    2     3     4     5     6     7     8   ");
+        for(int w = 0; w<8; w++){
+            System.out.println("  -------------------------------------------------");
+            System.out.print(w+1+" |");
+            for(int z = 0; z<8; z++){
+                System.out.print("  "+board[w][z]+"  |");
             }
             System.out.print("\n");
         }
+        System.out.println("  -------------------------------------------------");
     }
 
     /*
