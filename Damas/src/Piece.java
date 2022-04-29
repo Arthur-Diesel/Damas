@@ -27,6 +27,7 @@ public class Piece {
         return this.color;
     }
 
+    public boolean isDama() { return false; }
     public void setX(int x) { }
     public void setY(int y) { }
 }
