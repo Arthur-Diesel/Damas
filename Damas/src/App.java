@@ -16,10 +16,10 @@ public class App {
         Pieces.add(new Pawn(1, 2, 'b'));
         Pieces.add(new Pawn(1, 4, 'b'));
         Pieces.add(new Pawn(1, 6, 'b'));
-        Pieces.add(new Pawn(2, 1, 'b'));
-        Pieces.add(new Pawn(2, 3, 'b'));
-        Pieces.add(new Pawn(2, 5, 'b'));
-        Pieces.add(new Pawn(2, 7, 'b'));
+        Pieces.add(new Dama(2, 1, 'B'));
+        Pieces.add(new Dama(2, 3, 'B'));
+        Pieces.add(new Dama(2, 5, 'B'));
+        Pieces.add(new Dama(2, 7, 'B'));
 
         views.ShowBoard(Pieces);
     }

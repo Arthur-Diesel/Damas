@@ -41,8 +41,28 @@ public class Views {
     }
 
     /*
-    public void ShowPlay(){
+    public boolean ShowPlayer(int PlayNumber){
+        if(PlayNumber % 2 == 0){
+            System.out.pritln("\nVez das Peças Brancas!\n");
+            return true; // É vez das peças brancas!
+        } else {
+            System.out.pritln("\nVez das Peças Pretas!\n");
+            return false; // É vez das peças pretas!
+        }
+    }
+    */
 
+    /*
+    public void ShowWhiteWinner(){
+        System.out.println("==============================");
+        System.out.println("  As pecas Brancas ganharam!  ");
+        System.out.println("==============================");
+    }
+
+    public void ShowBlackWinner(){
+        System.out.println("==============================");
+        System.out.println("   As pecas Pretas ganharam!  ");
+        System.out.println("==============================");
     }
     */
 

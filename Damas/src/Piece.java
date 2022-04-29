@@ -5,11 +5,14 @@ public class Piece {
 
     // X É Linha!
     // Y É Coluna!
+    // b é Peão branco!
+    // B é dama branca!
+    // p é Peão preto!
+    // P é dama preta!
 
-    Piece(int x, int y, char color){
+    Piece(int x, int y){
         this.x = x;
         this.y = y;
-        this.color = color;
     }
 
     public int getX() {
