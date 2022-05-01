@@ -25,10 +25,10 @@ public class App {
         Pieces.add(new Pawn(1, 2, 'b'));
         Pieces.add(new Pawn(1, 4, 'b'));
         Pieces.add(new Pawn(1, 6, 'b'));
-        Pieces.add(new Pawn(2, 1, 'B'));
-        Pieces.add(new Pawn(2, 3, 'B'));
-        Pieces.add(new Pawn(2, 5, 'B'));
-        Pieces.add(new Pawn(2, 7, 'B'));
+        Pieces.add(new Pawn(2, 1, 'b'));
+        Pieces.add(new Pawn(2, 3, 'b'));
+        Pieces.add(new Pawn(2, 5, 'b'));
+        Pieces.add(new Pawn(6, 7, 'b'));
 
         Pieces.add(new Pawn(5, 0, 'p'));
         Pieces.add(new Pawn(5, 2, 'p'));
@@ -37,11 +37,11 @@ public class App {
         Pieces.add(new Pawn(6, 1, 'p'));
         Pieces.add(new Pawn(6, 3, 'p'));
         Pieces.add(new Pawn(6, 5, 'p'));
-        Pieces.add(new Pawn(6, 7, 'p'));
-        Pieces.add(new Pawn(7, 0, 'P'));
-        Pieces.add(new Pawn(7, 2, 'P'));
-        Pieces.add(new Pawn(7, 4, 'P'));
-        Pieces.add(new Dama(7, 6, 'P'));
+        Pieces.add(new Pawn(2, 7, 'p'));
+        Pieces.add(new Pawn(7, 0, 'p'));
+        Pieces.add(new Pawn(7, 2, 'p'));
+        Pieces.add(new Pawn(7, 4, 'p'));
+        Pieces.add(new Pawn(7, 6, 'b'));
         
         
        
@@ -51,17 +51,24 @@ public class App {
         boolean aux = false;
         int xLinhaAntes;
         int yColunaAntes;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             do {
+                if (i % 2==0) {
+                    System.out.println("================= VEZ DO BRANCO =================");
+                    
+                }else{
+                    System.out.println("================= VEZ DO PRETO =================");
+                    
+                }
+
                 System.out.println("Infome a linha e coluna da peça que vc deseja mudar");
                  xLinhaAntes = scanner.nextInt();
                  yColunaAntes = scanner.nextInt();
                 
                 aux = verificador.CasaComPeca(Pieces,xLinhaAntes,yColunaAntes);
             } while (aux == false);
-             int xLinhaDepois;
-             int yColunaDepois;
-             
+            int xLinhaDepois;
+            int yColunaDepois;
             do {
                  System.out.println("Infome a linha e coluna para deslocar a peça escolhida");
                  xLinhaDepois = scanner.nextInt();
@@ -70,15 +77,16 @@ public class App {
                 aux = verificador.MovimentoPossivelPeao(Pieces,xLinhaAntes,yColunaAntes,xLinhaDepois,yColunaDepois);   
             } while (aux == false);
             aux = false;
-            //aux=verificador.moverPeaoComer(Pieces, xLinhaAntes, yColunaAntes, xLinhaDepois, yColunaDepois);
-            
-            aux = verificador.moverPeao(Pieces, xLinhaAntes, yColunaAntes, xLinhaDepois, yColunaDepois);
-            if (aux == true) {
-                System.out.println("PODE COMER");
-            }else{
-                System.out.println("NAO PODE");
-                
+            if (i % 2==0) {
+                aux = verificador.moverPeaoBranco(Pieces, xLinhaAntes, yColunaAntes, xLinhaDepois, yColunaDepois);
+            }else{ 
+                aux = verificador.moverPeaoPreto(Pieces, xLinhaAntes, yColunaAntes, xLinhaDepois, yColunaDepois);
             }
+          
+            // VERIFICA SE É DAMA NÃO ESTA FUNCIONANDO                           verificador.IsDama(Pieces, xLinhaDepois, yColunaDepois);
+
+            
+            
             
             System.out.println(aux);
      
