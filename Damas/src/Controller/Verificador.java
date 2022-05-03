@@ -1,4 +1,4 @@
-package Controller;
+//package Controller;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -48,13 +48,12 @@ public class Verificador {
 
                                 return true;                   
                             }
-                        }        
-                         
+                        }            
                     }
-                    
-                }}
-                
+                }
             }
+                
+        }
             return false;
     }    
 
@@ -64,11 +63,11 @@ public class Verificador {
             if (xLinhaAntes == piece.getX() && yColunaAntes == piece.getY()) {
                 if (piece.getColor() == 'b') {
                     for (int i = 0; i < 24; i++) {
-                        //PROCURA SE TEM UMA PEÇA NA CASA
+                        //PROCURA SE TEM UMA PECA NA CASA
                         if(Pieces.get(i).getX() == xLinhaDepois && Pieces.get(i).getY() == yColunaDepois && Pieces.get(i).getColor() == 'p'/*|| Pieces.get(i).getColor() == 'P'*/){
                             if (yColunaAntes < yColunaDepois) {   
                                 for (int j = 0; j < 24; j++) { 
-                                    //PROCURA SE TEM NA CORNDENADA NÃO TEM NENHUMA PEÇA
+                                    //PROCURA SE TEM NA COORDENADA NAO TEM NENHUMA PECA
                                     if (Pieces.get(j).getX() == xLinhaDepois + 1 && Pieces.get(j).getY() == yColunaDepois + 1) {
                                         System.out.println("nao foi possivel jogar");
                                         return false;
@@ -84,7 +83,7 @@ public class Verificador {
                             }else if (yColunaAntes > yColunaDepois) {
                                 
                                 for (int j = 0; j < 24; j++) {                                
-                                    //PROCURA SE TEM NA CORNDENADA NÃO TEM NENHUMA PEÇA
+                                    //PROCURA SE TEM NA COORDENADA NÃO TEM NENHUMA PECA
                                     if (Pieces.get(j).getX() == xLinhaDepois + 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
                                         System.out.println("não foi possivel jogar");
                                         return false;
@@ -119,12 +118,12 @@ public class Verificador {
             if (xLinhaAntes == piece.getX() && yColunaAntes == piece.getY() ) {
                 if (piece.getColor() == 'p') {
                     for (int i = 0; i < 24; i++) {
-                        //PROCURA SE TEM UMA PEÇA NA CASA
+                        //PROCURA SE TEM UMA PECA NA CASA
                         if(Pieces.get(i).getX() == xLinhaDepois && Pieces.get(i).getY() == yColunaDepois && Pieces.get(i).getColor() == 'b'/*|| Pieces.get(i).getColor() == 'B'*/ ){
                             if (yColunaAntes < yColunaDepois) {
                               
                                 for (int j = 0; j < 24; j++) { 
-                                    //PROCURA SE TEM NA CORNDENADA NÃO TEM NENHUMA PEÇA
+                                    //PROCURA SE TEM NA COORDENADA NAO TEM NENHUMA PECA
                                     if (Pieces.get(j).getX() == xLinhaDepois - 1 && Pieces.get(j).getY() == yColunaDepois + 1) {
                                         System.out.println("nao foi possivel jogar");
                                         return false;
@@ -140,9 +139,9 @@ public class Verificador {
                             }else if (yColunaAntes > yColunaDepois) {
                                 
                                 for (int j = 0; j < 24; j++) {                                
-                                    //PROCURA SE TEM NA CORNDENADA NÃO TEM NENHUMA PEÇA
+                                    //PROCURA SE TEM NA COORDENADA NAO TEM NENHUMA PECA
                                     if (Pieces.get(j).getX() == xLinhaDepois - 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
-                                        System.out.println("não foi possivel jogar");
+                                        System.out.println("Nao foi possivel jogar");
                                         return false;
                                     }else if (j == 23) {
                                         piece.setX(xLinhaDepois - 1 );
@@ -169,8 +168,9 @@ public class Verificador {
     }
 
     public void IsDama(ArrayList<Piece> Pieces,int xLinhaDepois,int yColunaDepois){
-         
+    	int cont=0;         
         for (Piece piece : Pieces) {
+        	cont++;
             if (piece.getColor() == 'b') {
                 if (piece.getX() == 7) {
                     System.out.println("VIROU DAMAAA");

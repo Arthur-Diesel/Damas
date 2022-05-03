@@ -28,7 +28,7 @@ public class App {
         Pieces.add(new Pawn(2, 1, 'b'));
         Pieces.add(new Pawn(2, 3, 'b'));
         Pieces.add(new Pawn(2, 5, 'b'));
-        Pieces.add(new Pawn(6, 7, 'b'));
+        Pieces.add(new Pawn(2, 7, 'b'));
 
         Pieces.add(new Pawn(5, 0, 'p'));
         Pieces.add(new Pawn(5, 2, 'p'));
@@ -37,11 +37,11 @@ public class App {
         Pieces.add(new Pawn(6, 1, 'p'));
         Pieces.add(new Pawn(6, 3, 'p'));
         Pieces.add(new Pawn(6, 5, 'p'));
-        Pieces.add(new Pawn(2, 7, 'p'));
+        Pieces.add(new Pawn(6, 7, 'p'));
         Pieces.add(new Pawn(7, 0, 'p'));
         Pieces.add(new Pawn(7, 2, 'p'));
         Pieces.add(new Pawn(7, 4, 'p'));
-        Pieces.add(new Pawn(7, 6, 'b'));
+        Pieces.add(new Pawn(7, 6, 'p'));
         
         
        
@@ -61,20 +61,26 @@ public class App {
                     
                 }
 
-                System.out.println("Infome a linha e coluna da peça que vc deseja mudar");
+                System.out.println("Infome a linha e coluna da peca que vc deseja mudar");
                  xLinhaAntes = scanner.nextInt();
                  yColunaAntes = scanner.nextInt();
                 
                 aux = verificador.CasaComPeca(Pieces,xLinhaAntes,yColunaAntes);
+                if(aux==false) {
+                	System.out.println("A casa que voce escolheu nao tem  nenhuma peca");
+                }
             } while (aux == false);
             int xLinhaDepois;
             int yColunaDepois;
             do {
-                 System.out.println("Infome a linha e coluna para deslocar a peça escolhida");
+                 System.out.println("Infome a linha e coluna para deslocar a peca escolhida");
                  xLinhaDepois = scanner.nextInt();
                  yColunaDepois = scanner.nextInt();
                 
-                aux = verificador.MovimentoPossivelPeao(Pieces,xLinhaAntes,yColunaAntes,xLinhaDepois,yColunaDepois);   
+                aux = verificador.MovimentoPossivelPeao(Pieces,xLinhaAntes,yColunaAntes,xLinhaDepois,yColunaDepois);  
+                if(aux == false) {
+                	System.out.println("A peca nao pode ser deslocada para essa coordenada");
+                }
             } while (aux == false);
             aux = false;
             if (i % 2==0) {
@@ -83,7 +89,7 @@ public class App {
                 aux = verificador.moverPeaoPreto(Pieces, xLinhaAntes, yColunaAntes, xLinhaDepois, yColunaDepois);
             }
           
-            // VERIFICA SE É DAMA NÃO ESTA FUNCIONANDO                           verificador.IsDama(Pieces, xLinhaDepois, yColunaDepois);
+            verificador.IsDama(Pieces, xLinhaDepois, yColunaDepois);
 
             
             
