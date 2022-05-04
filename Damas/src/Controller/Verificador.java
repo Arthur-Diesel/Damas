@@ -1,6 +1,7 @@
 //package Controller;
 
 import java.util.ArrayList;
+import java.ArrayUtils.removeElement;
 import java.util.Scanner;
 
 import javax.sound.midi.Soundbank;
@@ -168,26 +169,26 @@ public class Verificador {
     }
 
     public void IsDama(ArrayList<Piece> Pieces,int xLinhaDepois,int yColunaDepois){
-    	int cont=0;         
+    	int cont=0; 
+
         for (Piece piece : Pieces) {
         	cont++;
             if (piece.getColor() == 'b') {
                 if (piece.getX() == 7) {
                     System.out.println("VIROU DAMAAA");
-                    Pieces.remove(piece);
+                    Pieces = removeElement(Pieces, cont);
                     Pieces.add(new Dama(xLinhaDepois, yColunaDepois,'B'));
                 }
             }
+            
             if(piece.getColor() == 'p'){
                 if (piece.getX() == 0) {
                     System.out.println("VIROU DAMAAAA");
-                    Pieces.remove(piece);
+                    Pieces = removeElement(Pieces, cont);
                     Pieces.add(new Dama(xLinhaDepois, yColunaDepois,'P'));
                 }
-            }
-            
+            }    
         }
-
     }
     
     

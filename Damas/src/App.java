@@ -4,8 +4,6 @@ import Controller.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Controller.*;
-
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
