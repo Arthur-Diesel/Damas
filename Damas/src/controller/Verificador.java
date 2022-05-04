@@ -1,20 +1,27 @@
+package controller;
 //package Controller;
 
 import java.util.ArrayList;
-import java.ArrayUtils.removeElement;
-import java.util.Scanner;
+//import java.ArrayUtils.removeElement;
+//import java.util.Scanner;
 
-import javax.sound.midi.Soundbank;
-import javax.xml.bind.ValidationEventHandler;
-
-import Model.*;
+//import javax.sound.midi.Soundbank;
+import javax.xml.*;
+import Model.Dama;
+import Model.Piece;
+//import javax.xml.bind.ValidationEventHandler;
 public class Verificador {
     
-    public boolean CasaComPeca(ArrayList<Piece> Pieces, int xLinha,int yColuna){
+    public boolean CasaComPeca(ArrayList<Piece> Pieces, int xLinha,int yColuna, int i){
         
         for (Piece piece : Pieces) {
-            if(xLinha == piece.getX() && yColuna == piece.getY()){
-                return true;  
+        	if(i % 2 == 0) {
+        		//VERIFICA SE SE O USAUARIO DIGITOU UMA CASA VALIDA E SE SELECIONOU A COR CERTA
+        		if(xLinha == piece.getX() && yColuna == piece.getY() && piece.getColor() == 'b' || piece.getColor() == 'B'){
+        			return true;        		
+        		}            	
+            } else if (xLinha == piece.getX() && yColuna == piece.getY() && piece.getColor() == 'P' || piece.getColor() == 'p') {
+            	return true;
             }
         }
         return false;
@@ -172,11 +179,10 @@ public class Verificador {
     	int cont=0; 
 
         for (Piece piece : Pieces) {
-        	cont++;
             if (piece.getColor() == 'b') {
                 if (piece.getX() == 7) {
                     System.out.println("VIROU DAMAAA");
-                    Pieces = removeElement(Pieces, cont);
+                    //Pieces = removeElement(Pieces, cont);
                     Pieces.add(new Dama(xLinhaDepois, yColunaDepois,'B'));
                 }
             }
@@ -184,10 +190,11 @@ public class Verificador {
             if(piece.getColor() == 'p'){
                 if (piece.getX() == 0) {
                     System.out.println("VIROU DAMAAAA");
-                    Pieces = removeElement(Pieces, cont);
+                    //Pieces = removeElement(Pieces, cont);
                     Pieces.add(new Dama(xLinhaDepois, yColunaDepois,'P'));
                 }
             }    
+            cont++;
         }
     }
     

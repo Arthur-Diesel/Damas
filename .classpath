@@ -2,6 +2,5 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry excluding="Controller/" kind="src" path="Damas/src"/>
-	<classpathentry kind="src" path="Damas/src/Controller"/>
 	<classpathentry kind="output" path="Damas/bin"/>
 </classpath>

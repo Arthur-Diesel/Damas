@@ -1,8 +1,10 @@
 import Model.*;
 import View.Views;
-import Controller.*;
+import controller.Verificador;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -45,11 +47,13 @@ public class App {
        
 
 
-        views.ShowBoard(Pieces);
+    views.ShowBoard(Pieces);
         boolean aux = false;
         int xLinhaAntes;
         int yColunaAntes;
         for (int i = 0; i < 20; i++) {
+        	
+        	//REPETI ATE O USUARIO DIGITAR UMA CASA VALIDA
             do {
                 if (i % 2==0) {
                     System.out.println("================= VEZ DO BRANCO =================");
@@ -58,16 +62,20 @@ public class App {
                     System.out.println("================= VEZ DO PRETO =================");
                     
                 }
-
+                
+                //USUARIO DIGITA A LINHA E COLONA DA PECA QUE ELE QUER COMER
                 System.out.println("Infome a linha e coluna da peca que vc deseja mudar");
                  xLinhaAntes = scanner.nextInt();
                  yColunaAntes = scanner.nextInt();
                 
-                aux = verificador.CasaComPeca(Pieces,xLinhaAntes,yColunaAntes);
+                //VERIFICA SE EH VALIDO A CASA
+                aux = verificador.CasaComPeca(Pieces,xLinhaAntes,yColunaAntes, i);
                 if(aux==false) {
-                	System.out.println("A casa que voce escolheu nao tem  nenhuma peca");
+                	System.out.println("A casa que voce escolheu nao tem  nenhuma peca ou vc selecionou a cor do adversário!");
                 }
+                
             } while (aux == false);
+            
             int xLinhaDepois;
             int yColunaDepois;
             do {
