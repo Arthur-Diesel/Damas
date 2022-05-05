@@ -31,7 +31,6 @@ public class Views {
                 if(board[x][y]!='b'){
                     board[x][y] = ' ';
                 }
-
             }
             // board[0][x] = (char) x;
             // board[x][0] = (char) x;
@@ -41,10 +40,10 @@ public class Views {
         for (Piece piece : Pieces) {
             board[piece.getX()][piece.getY()] = piece.getColor();
         }
-        System.out.println("     0    1     2     3     4     5     6     7   ");
+        System.out.println("     1    2     3     4     5     6     7     8   ");
         for(int w = 0; w<8; w++){
             System.out.println("  -------------------------------------------------");
-            System.out.print(w+" |");
+            System.out.print(w+1+" |");
             for(int z = 0; z<8; z++){
                 System.out.print("  "+board[w][z]+"  |");
             }
@@ -54,29 +53,17 @@ public class Views {
     }
 
     
-    /*
-    public boolean ShowPlayer(int PlayNumber){
+    
+    public void ShowPlayer(int PlayNumber){
         if(PlayNumber % 2 == 0){
-            System.out.pritln("\nVez das Peças Brancas!\n");
-            return true; // É vez das peças brancas!
+        	System.out.print("==============================");
+            System.out.print("\n| Vez das Pecas Brancas!     |\n");
+            System.out.print("==============================");
         } else {
-            System.out.pritln("\nVez das Peças Pretas!\n");
-            return false; // É vez das peças pretas!
+        	System.out.print("==============================");
+            System.out.print("\n| Vez das Pecas Pretas!      |\n");
+            System.out.print("==============================");
         }
     }
-    */
-
-    /*
-    public void ShowWhiteWinner(){
-        System.out.println("==============================");
-        System.out.println("  As pecas Brancas ganharam!  ");
-        System.out.println("==============================");
-    }
-    public void ShowBlackWinner(){
-        System.out.println("==============================");
-        System.out.println("   As pecas Pretas ganharam!  ");
-        System.out.println("==============================");
-    }
-    */
 
 }
