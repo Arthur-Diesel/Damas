@@ -9,9 +9,5 @@ public class Pawn extends Piece {
 
     public boolean isDama(){
         return false;
-    }
-
-   
-
-    
+    }   
 }

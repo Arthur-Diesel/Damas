@@ -7,10 +7,10 @@ public class Piece {
 
     // X É Linha!
     // Y É Coluna!
-    // b é Peão branco!
-    // B é dama branca!
-    // p é Peão preto!
-    // P é dama preta!
+    // b é Peao branco!
+    // B é Dama branca!
+    // p é Peao preto!
+    // P é Dama preta!
 
     Piece(int x, int y){
         this.x = x;
