@@ -37,7 +37,7 @@ public class Verificador {
             		
 	            	//VERFIFCA SE EH PEAO BRANCO
 	                if (piece.getColor() == 'b') {	                           
-                        for (int index = 0; index < 24; index++) {
+                        for (int index = 0; index < Pieces.size(); index++) {
                             if(xLinhaDepois == Pieces.get(index).getX() && yColunaDepois == Pieces.get(index).getY() && (Pieces.get(index).getColor() =='b' || Pieces.get(index).getColor() == 'B')){
                             	return false;                            
                             }
@@ -49,7 +49,7 @@ public class Verificador {
 	                //VERFIFCA SE EH PEAO PRETO
 	                if (piece.getColor() == 'p') {	                    
 	        
-                        for (int index = 0; index < 24; index++) {
+                        for (int index = 0; index < Pieces.size(); index++) {
                             if(xLinhaDepois == Pieces.get(index).getX() && yColunaDepois == Pieces.get(index).getY() && (Pieces.get(index).getColor() =='p' || Pieces.get(index).getColor() == 'P')){
                             	return false;             
                             }
@@ -72,7 +72,7 @@ public class Verificador {
     				 
 //    				 DAMA BRANCA
     				 if(piece.getColor() == 'B') {
-    					 for (int index = 0; index < 24; index++) {
+    					 for (int index = 0; index < Pieces.size(); index++) {
                              if(xLinhaDepois == Pieces.get(index).getX() && yColunaDepois == Pieces.get(index).getY() && (Pieces.get(index).getColor() =='b' || Pieces.get(index).getColor() == 'B')){
                              	return false;                            
                              }
@@ -81,7 +81,7 @@ public class Verificador {
     				 
 //    				 DAMA PRETA
     				 if(piece.getColor() == 'P') {
-    					 for (int index = 0; index < 24; index++) {
+    					 for (int index = 0; index < Pieces.size(); index++) {
                              if(xLinhaDepois == Pieces.get(index).getX() && yColunaDepois == Pieces.get(index).getY() && (Pieces.get(index).getColor() =='p' || Pieces.get(index).getColor() == 'P')){
                              	return false;                            
                              }
@@ -102,11 +102,11 @@ public class Verificador {
         for(Piece piece : Pieces){
             if (xLinhaAntes == piece.getX() && yColunaAntes == piece.getY()) {
                 if (piece.getColor() == 'b') {
-                    for (int i = 0; i < 24; i++) {
+                    for (int i = 0; i < Pieces.size(); i++) {
                         //PROCURA SE TEM UMA PECA NA CASA DE DESTINO
                         if(Pieces.get(i).getX() == xLinhaDepois && Pieces.get(i).getY() == yColunaDepois && (Pieces.get(i).getColor() == 'p' || Pieces.get(i).getColor() == 'P')){
                             if (yColunaAntes < yColunaDepois) {   
-                                for (int j = 0; j < 24; j++) {
+                                for (int j = 0; j < Pieces.size(); j++) {
                                     if (Pieces.get(j).getX() == xLinhaDepois + 1 && Pieces.get(j).getY() == yColunaDepois + 1) {
                                         System.out.println("| Nao foi possivel jogar!!");
                                         return false;
@@ -118,7 +118,7 @@ public class Verificador {
                                 return true;
                             }else if (yColunaAntes > yColunaDepois) {
                                 
-                                for (int j = 0; j < 24; j++) {
+                                for (int j = 0; j < Pieces.size(); j++) {
                                     if (Pieces.get(j).getX() == xLinhaDepois + 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
                                         System.out.println("não foi possivel jogar");
                                         return false;
@@ -145,13 +145,13 @@ public class Verificador {
         for(Piece piece : Pieces){    
             if (xLinhaAntes == piece.getX() && yColunaAntes == piece.getY()) {
                 if (piece.getColor() == 'p') {
-                    for (int i = 0; i < 24; i++) {
+                    for (int i = 0; i < Pieces.size(); i++) {
                         //PROCURA SE TEM UMA PECA NA CASA DE DESTINO
                         if(Pieces.get(i).getX() == xLinhaDepois && Pieces.get(i).getY() == yColunaDepois && (Pieces.get(i).getColor() == 'b'|| Pieces.get(i).getColor() == 'B')){
                         	System.out.println("TESTE");
                             
                         	if (yColunaAntes < yColunaDepois) {                              
-                                for (int j = 0; j < 24; j++) {
+                                for (int j = 0; j < Pieces.size(); j++) {
                                     if (Pieces.get(j).getX() == xLinhaDepois - 1 && Pieces.get(j).getY() == yColunaDepois + 1) {
                                         System.out.println("nao foi possivel jogar");
                                         return false;
@@ -164,7 +164,7 @@ public class Verificador {
                                 return true;
                             }else if (yColunaAntes > yColunaDepois) {
                                 
-                                for (int j = 0; j < 24; j++) {
+                                for (int j = 0; j < Pieces.size(); j++) {
                                     if (Pieces.get(j).getX() == xLinhaDepois - 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
                                         System.out.println("Nao foi possivel jogar");
                                         return false;
@@ -233,13 +233,13 @@ public class Verificador {
     	 for(Piece piece : Pieces){
     		 if (xLinhaAntes == piece.getX() && yColunaAntes == piece.getY()) {
                  if (piece.getColor() == 'B') {
-                     for (int i = 0; i < 24; i++) {
+                     for (int i = 0; i < Pieces.size(); i++) {
                          //PROCURA SE TEM UMA PECA NA CASA DE DESTINO
                          if(Pieces.get(i).getX() == xLinhaDepois && Pieces.get(i).getY() == yColunaDepois && (Pieces.get(i).getColor() == 'p' || Pieces.get(i).getColor() == 'P')){
                              if (yColunaAntes < yColunaDepois) { 
 //                            	 MOVIMENTA DIREITA EM BAIXO
                             	 if(xLinhaAntes > xLinhaDepois) {
-                            		 for (int j = 0; j < 24; j++) {
+                            		 for (int j = 0; j < Pieces.size(); j++) {
                             			 if (Pieces.get(j).getX() == xLinhaDepois - 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
                             				 System.out.println("| Nao foi possivel jogar!!");
                             				 return false;
@@ -251,7 +251,7 @@ public class Verificador {
                             		 return true;                            		 
                             	 } else {
 //                            	 MOVIMENTA DIREITA EM CIMA
-                            		 for (int j = 0; j < 24; j++) {
+                            		 for (int j = 0; j < Pieces.size(); j++) {
                             			 if (Pieces.get(j).getX() == xLinhaDepois + 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
                             				 System.out.println("| Nao foi possivel jogar!!");
                             				 return false;
@@ -266,7 +266,7 @@ public class Verificador {
                              }else if (yColunaAntes > yColunaDepois) {
 //                              MOVIMENTA ESQUERDA EM BAIXO
                             	 if(xLinhaAntes > xLinhaDepois) {
-	                                 for (int j = 0; j < 24; j++) {
+	                                 for (int j = 0; j < Pieces.size(); j++) {
 	                                     if (Pieces.get(j).getX() == xLinhaDepois + 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
 	                                         System.out.println("não foi possivel jogar");
 	                                         return false;
@@ -278,7 +278,7 @@ public class Verificador {
 	                                 return true;
                             	 } else {
 //                            	MOVIMENTA ESQUERDA EM CIMA
-                            		 for (int j = 0; j < 24; j++) {
+                            		 for (int j = 0; j < Pieces.size(); j++) {
                             			 if (Pieces.get(j).getX() == xLinhaDepois - 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
                             				 System.out.println("| Nao foi possivel jogar!!");
                             				 return false;
@@ -299,13 +299,13 @@ public class Verificador {
                  } 
                  
                  if (piece.getColor() == 'P') {
-                     for (int i = 0; i < 24; i++) {
+                     for (int i = 0; i < Pieces.size(); i++) {
                          //PROCURA SE TEM UMA PECA NA CASA DE DESTINO
                          if(Pieces.get(i).getX() == xLinhaDepois && Pieces.get(i).getY() == yColunaDepois && (Pieces.get(i).getColor() == 'b' || Pieces.get(i).getColor() == 'B')){
                              if (yColunaAntes < yColunaDepois) { 
 //                            	 MOVIMENTA DIREITA EM BAIXO
                             	 if(xLinhaAntes > xLinhaDepois) {
-                            		 for (int j = 0; j < 24; j++) {
+                            		 for (int j = 0; j < Pieces.size(); j++) {
                             			 if (Pieces.get(j).getX() == xLinhaDepois - 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
                             				 System.out.println("| Nao foi possivel jogar!!");
                             				 return false;
@@ -317,7 +317,7 @@ public class Verificador {
                             		 return true;                            		 
                             	 } else {
 //                            	 MOVIMENTA DIREITA EM CIMA
-                            		 for (int j = 0; j < 24; j++) {
+                            		 for (int j = 0; j < Pieces.size(); j++) {
                             			 if (Pieces.get(j).getX() == xLinhaDepois + 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
                             				 System.out.println("| Nao foi possivel jogar!!");
                             				 return false;
@@ -332,7 +332,7 @@ public class Verificador {
                              }else if (yColunaAntes > yColunaDepois) {
 //                              MOVIMENTA ESQUERDA EM BAIXO
                             	 if(xLinhaAntes > xLinhaDepois) {
-	                                 for (int j = 0; j < 24; j++) {
+	                                 for (int j = 0; j < Pieces.size(); j++) {
 	                                     if (Pieces.get(j).getX() == xLinhaDepois + 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
 	                                         System.out.println("não foi possivel jogar");
 	                                         return false;
@@ -344,7 +344,7 @@ public class Verificador {
 	                                 return true;
                             	 } else {
 //                            	MOVIMENTA ESQUERDA EM CIMA
-                            		 for (int j = 0; j < 24; j++) {
+                            		 for (int j = 0; j < Pieces.size(); j++) {
                             			 if (Pieces.get(j).getX() == xLinhaDepois - 1 && Pieces.get(j).getY() == yColunaDepois - 1) {
                             				 System.out.println("| Nao foi possivel jogar!!");
                             				 return false;

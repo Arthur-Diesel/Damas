@@ -22,21 +22,21 @@ public class App {
         Pieces.add(new Pawn(5, 6, 'p'));
         Pieces.add(new Pawn(6, 1, 'p'));
         Pieces.add(new Pawn(6, 3, 'p'));
-        Pieces.add(new Pawn(6, 5, 'b'));
-        Pieces.add(new Pawn(6, 7, 'p'));
+        Pieces.add(new Pawn(6, 5, 'p'));
+        Pieces.add(new Pawn(6, 7, 'b'));
         Pieces.add(new Pawn(7, 0, 'p'));
         Pieces.add(new Pawn(7, 2, 'p'));
         Pieces.add(new Pawn(7, 4, 'p'));
-        Pieces.add(new Pawn(7, 6, ' '));
+        Pieces.add(new Pawn(0, 0, ' '));
         
         Pieces.add(new Pawn(0, 1, 'b'));
         Pieces.add(new Pawn(0, 3, 'b'));
-        Pieces.add(new Pawn(0, 5, ' '));
+        Pieces.add(new Pawn(0, 5, 'b'));
         Pieces.add(new Pawn(0, 7, 'b'));
         Pieces.add(new Pawn(1, 0, 'b'));
         Pieces.add(new Pawn(1, 2, 'b'));
         Pieces.add(new Pawn(1, 4, 'b'));
-        Pieces.add(new Pawn(1, 6, 'p'));
+        Pieces.add(new Pawn(1, 6, 'b'));
         Pieces.add(new Pawn(2, 1, 'b'));
         Pieces.add(new Pawn(2, 3, 'b'));
         Pieces.add(new Pawn(2, 5, 'b'));
@@ -85,10 +85,6 @@ public class App {
 		        	aux = verificador.MovimentoPossivelPeao(Pieces,xLinhaAntes,yColunaAntes,xLinhaDepois,yColunaDepois);
 		        }
 		        
-	            
-//	            System.out.println(aux);
-	            
-	            
 	            if(aux == false) {
 	            	System.out.println("\n| A peca nao pode ser deslocada para essa coordenada!");
 	            }	            
@@ -125,12 +121,11 @@ public class App {
 	        }
 	      
 	        verificador.IsDama(Pieces, xLinhaDepois, yColunaDepois);
-//	        System.out.println(aux);
 	        views.ShowBoard(Pieces);
 	        
 	        
-	    }while(cont<20);
-//	    }while(verificador.win(Pieces) == false);
+	    
+	    }while(verificador.win(Pieces) == false);
 
 	    scanner.close();
     }
